@@ -82,8 +82,9 @@ Bash
 <p>Configuração (.env) Crie um arquivo .env na raiz e preencha:
 Ini, TOML</p>
 
-<p>TELEGRAM_TOKEN=seu_token_aqui</p>
-<p>GOOGLE_API_KEY=sua_chave_aqui</p>
+      TELEGRAM_TOKEN=seu_token_aqui
+   
+      GOOGLE_API_KEY=sua_chave_aqui
 
 Executar
 Bash
@@ -93,14 +94,14 @@ Bash
 ## 📂 Estrutura do Projeto
 Plaintext
 
-<p>bot-telegram-gemini/</p>
-<p>│
-<p>├── Dockerfile          # Configuração da imagem Docker</p>
-<p>├── .dockerignore       # Arquivos ignorados pelo Docker</p>
-<p>├── .env                # Chaves de API (NÃO COMITAR)</p>
-<p>├── bot.py              # Código principal</p>
-<p>├── requirements.txt    # Dependências</p>
-<p>└── README.md           # Documentação</p>
+      bot-telegram-gemini/
+      │
+      ├── Dockerfile          # Configuração da imagem Docker
+      ├── .dockerignore       # Arquivos ignorados pelo Docker
+      ├── .env                # Chaves de API (NÃO COMITAR)
+      ├── bot.py              # Código principal
+      ├── requirements.txt    # Dependências
+      └── README.md           # Documentação
 
 ## 📝 Licença
 
