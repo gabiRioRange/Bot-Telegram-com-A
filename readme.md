@@ -38,11 +38,10 @@ Agora com suporte nativo a **Docker** para deploy fácil em qualquer ambiente.
 1. **Construa a imagem:**
    ```bash
    docker build -t bot-gemini .
+   Execute o container: (Certifique-se de ter o arquivo .env criado na pasta)
+Bash
 
-    Execute o container: (Certifique-se de ter o arquivo .env criado na pasta)
-    Bash
-
-docker run --env-file .env --name meu-bot bot-gemini
+      docker run --env-file .env --name meu-bot bot-gemini
 
 Parar o bot:
 Bash
@@ -61,48 +60,49 @@ Instalação
     Clone o repositório
     Bash
 
-git clone [https://github.com/gabiRioRange/bot-telegram-gemini.git](https://github.com/gabiRioRange/bot-telegram-gemini.git)
-cd bot-telegram-gemini
+      git clone [https://github.com/gabiRioRange/bot-telegram-gemini.git](https://github.com/gabiRioRange/bot-telegram-gemini.git)
+      cd bot-telegram-gemini
 
 Configure o ambiente
 Bash
 
 # Linux/Mac
-python3 -m venv venv
-source venv/bin/activate
+      python3 -m venv venv
+      source venv/bin/activate
 
 # Windows
-python -m venv venv
-venv\Scripts\activate
+      python -m venv venv
+      venv\Scripts\activate
 
 Instale as dependências
 Bash
 
-pip install -r requirements.txt
+      pip install -r requirements.txt
 
-Configuração (.env) Crie um arquivo .env na raiz e preencha:
-Ini, TOML
+<p>Configuração (.env) Crie um arquivo .env na raiz e preencha:
+Ini, TOML</p>
 
-TELEGRAM_TOKEN=seu_token_aqui
-GOOGLE_API_KEY=sua_chave_aqui
+      TELEGRAM_TOKEN=seu_token_aqui
+   
+      GOOGLE_API_KEY=sua_chave_aqui
 
 Executar
 Bash
 
     python bot.py
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 Plaintext
 
-bot-telegram-gemini/
-│
-├── Dockerfile          # Configuração da imagem Docker
-├── .dockerignore       # Arquivos ignorados pelo Docker
-├── .env                # Chaves de API (NÃO COMITAR)
-├── bot.py              # Código principal
-├── requirements.txt    # Dependências
-└── README.md           # Documentação
+      bot-telegram-gemini/
+      │
+      ├── Dockerfile          # Configuração da imagem Docker
+      ├── .dockerignore       # Arquivos ignorados pelo Docker
+      ├── .env                # Chaves de API (NÃO COMITAR)
+      ├── bot.py              # Código principal
+      ├── requirements.txt    # Dependências
+      └── README.md           # Documentação
 
-📝 Licença
+## 📝 Licença
 
 Desenvolvido por Gabriel para fins de estudo e portfólio.
