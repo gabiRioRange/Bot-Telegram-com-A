@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: bot_telegram_gemini
+    restart: always
+    environment:
+      - TZ=America/Sao_Paulo
+    env_file:
+      - .env
+    volumes:
+      - ./bot_database.db:/app/bot_database.db  # Persiste Logs/Usuários
+      - ./data:/app/data                        # Persiste Memória LanceDB
+    command: python run.py
+
+  dashboard:
+    build: .
+    container_name: bot_dashboard
+    restart: always
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./bot_database.db:/app/bot_database.db
+      - ./data:/app/data
+    command: streamlit run dashboard.py

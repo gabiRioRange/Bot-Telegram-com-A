@@ -1,11 +1,9 @@
-# .gitignore
-venv/
+#.env
+.venv/
 __pycache__/
-.env
-*.log
-
-__pycache__/
-venv/
-.env
-*.log
+*.pyc
 .DS_Store
+bot_database.db
+bot.log
+data/
+qdrant_data/

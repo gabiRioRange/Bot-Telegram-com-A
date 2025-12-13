@@ -2,4 +2,11 @@ pyTelegramBotAPI
 google-generativeai
 python-dotenv
 rich
+sqlalchemy
+pypdf
+lancedb
 requests
+plotly
+reportlab
+streamlit
+pandas

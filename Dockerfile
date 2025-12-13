@@ -1,20 +1,26 @@
-# 1. Usa uma imagem oficial do Python leve (Slim)
-FROM python:3.10-slim
+# Usa Python 3.12
+FROM python:3.12-slim
 
-# 2. Define o fuso horário para o Brasil (Opcional, mas bom para logs)
-ENV TZ=America/Sao_Paulo
-
-# 3. Cria a pasta de trabalho dentro do container
+# Define diretório
 WORKDIR /app
 
-# 4. Copia apenas o requirements primeiro (para aproveitar o cache)
-COPY requirements.txt .
+# Instala dependências do sistema
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# 5. Instala as dependências
+# Copia e instala libs
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 6. Copia todo o resto do código para dentro
-COPY . .
+# Copia o código (Lembre de NÃO ter a linha COPY .env .)
+COPY src/ ./src/
+COPY run.py .
+COPY dashboard.py .
 
-# 7. Comando para rodar o bot
-CMD ["python", "bot.py"]
+# Cria pasta de dados
+RUN mkdir -p data/lancedb-store
+
+# Comando padrão
+CMD ["python", "run.py"]
